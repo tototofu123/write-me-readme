@@ -1,6 +1,6 @@
 ---
 name: auto-readme
-description: Auto-generate and update README.md based on repo structure, skills, commands, and git changes. Triggers automatically before git push.
+description: Auto-generate and update README.md with rich formatting - tables, emojis, colors, code blocks, and more
 license: MIT
 compatibility: opencode
 metadata:
@@ -10,38 +10,62 @@ metadata:
 
 ## What I do
 
-Automatically generate/update README.md when pushing to GitHub by:
-1. Scanning repo structure (files, folders, skills, commands, plugins)
-2. Detecting git changes since last commit
-3. Reading version info from package.json
-4. Detecting available commands from `.opencode/commands/`
-5. Detecting skills from `.opencode/skills/*/SKILL.md`
-6. Generating clean markdown documentation
+Automatically generate/update README.md with **rich formatting**:
+- ✅ Tables for features, scripts, commands
+- ✅ Emojis for visual appeal (:rocket:, :book:, :wrench:, etc.)
+- ✅ Code blocks with syntax highlighting
+- ✅ Bold/italic text for emphasis
+- ✅ Badges/shields-style formatting
+- ✅ Collapsible sections
+- ✅ Badges for CI, license, version
+- ✅ Auto-detect repo structure
 
-## Trigger conditions
+## Rich Formatting Features
 
-**Auto-trigger (any of):**
-- Before `git push` operation detected
-- Version bump scripts detected changes
-- New skills/commands added
-- After significant file changes in `.opencode/`
+### Available Elements
+```
+| Tables | are | supported |
+|--------|-----|-----------|
+| **Bold** | *italic* | `code` |
+```
 
-**Skip conditions:**
-- Repo has no `.opencode/` directory
-- No significant changes detected
-- README.md was manually updated recently
+- **Emojis**: :rocket:, :book:, :wrench:, :sparkles:, :warning:, :bulb:
+- **Badges**: ![version](badge), ![license](badge)
+- **Code blocks**: ```bash, ```javascript, ```json
+- **Callouts**: > [!NOTE], > [!TIP], > [!WARNING]
 
-## Output rules
+### Output Sections
 
-Generate README with these sections:
-1. Title block with repo name and version
-2. Description from package.json or opencode.json
-3. Auto-detected commands list
-4. Auto-detected skills list
-5. File structure tree map
-6. Scripts section (if package.json exists)
-7. Quick start instructions
+1. **Header** - Title with emoji, version badge, description
+2. **Quick Stats** - Table with repo info (stars, forks, license)
+3. **Features** - Bulleted list with emojis
+4. **Commands** - Table format
+5. **Installation** - Code blocks
+6. **File Structure** - Tree with icons
+7. **Scripts** - Table format
+8. **Badges** - License, version, CI status
 
-## Integration
+## Trigger
 
-This skill works alongside task-workflow to auto-update docs before pushes.
+- Before `git push`
+- `/update-readme`
+- After significant changes
+
+## Usage
+
+```
+User: "update the README for this repo"
+→ Generate rich README with all formatting options
+
+User: "make it simple"
+→ Generate basic README without fancy formatting
+```
+
+## Tool Usage
+
+Use `glob`, `read`, `bash (git)`, `write` tools to:
+1. Scan repo structure
+2. Detect skills/commands/plugins
+3. Read package.json, VERSIONING.md
+4. Get git info
+5. Generate and write README.md
