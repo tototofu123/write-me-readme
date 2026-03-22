@@ -46,6 +46,13 @@ User: "make it simple"
 - **Code blocks**: bash, javascript, json
 - **Callouts**: > [!NOTE], > [!TIP], > [!WARNING]
 
+## Quick Start
+
+```bash
+git clone https://github.com/tototofu123/write-me-readme
+cd write-me-readme
+```
+
 ## License
 
 MIT License
